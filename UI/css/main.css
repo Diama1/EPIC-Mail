@@ -115,7 +115,7 @@ html, body
     input[type="submit"],
 input[type="reset"],
 input[type="button"],
-button,
+
 .button {
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -140,7 +140,7 @@ button,
   input[type="submit"],
 input[type="reset"],
 input[type="button"],
-button,
+
 .button {
   background-color: #08578d;
   box-shadow: inset 0 0 0 1px #08578d;
@@ -296,6 +296,291 @@ h1 {
             transition: all 0.3s 0.6s ease-out;
 }
 
+
+/* ------------------------------------
+----------------ADMIN------------------
+--------------------------------------- */
+
+/* body{
+    font-family:"Open Sans"; 
+    font-size: 0.9em;
+    line-height: 1.8;
+    padding:0;
+    margin:0;
+    background:#eee;
+} */
+.sidebar-left {
+    position: fixed;
+    top: 0;
+    float: left;
+    width: 200px;
+    height: 100%;
+    padding: 20px 0px;
+    background-color:#ffffff;
+    -moz-box-shadow: 0 0 5px #999;
+    -webkit-box-shadow: 0 0 5px #999;
+     box-shadow: 0 0 5px #999;
+}
+.sidebar-right {
+    
+    width: 85%;
+    float:right;
+    padding: 20px 0px;
+    background-color:transparent;
+    
+}
+.logo{
+    box-shadow: 0 4px 2px -2px gray;
+    text-align: center
+}
+.logo img{
+    width:70px;
+    height:70px;
+}
+.sidebar-left .sidebar-menu-links {
+    margin: 10px auto;
+    height: 80px;
+    text-align: center;
+    padding-top:25px;
+    box-shadow: 0 4px 2px -2px gray;
+}
+.sidebar-left .sidebar-menu-links a {
+    text-align: center;
+    margin-right:40%;
+}
+.sidebar-left .sidebar-menu-links a i.fa {
+    display: block;
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+.sidebar-left .sidebar-menu-links a.selected{
+    cursor: default;
+    color:#000;
+    background-color: #eee;
+}
+.contents{
+    float:right;
+    width:70%;
+    height:auto;
+    margin:12% 0 0 0;
+}
+.contents a{
+    color:#000
+}
+.contents a:hover{
+    color:#ccc
+}
+
+/* TABLE */
+
+table {
+    margin: 0 0 2rem 0;
+    width: 100%;
+ }
+    table tbody tr {
+      border: solid 1px;
+      border-left: 0;
+      height: 30px;
+      border-right: 0;
+     }
+    table td {
+      padding: 0.75rem 0.75rem; }
+    table th {
+      font-size: 0.9rem;
+      height: 20px;
+      width:35%;
+      font-weight: 600;
+      border-bottom:solid 1px #d0cfcf;
+      box-shadow: 0 4px 2px -2px gray;
+      padding: 0 0.75rem 0.75rem 0.75rem;
+      text-align: left; }
+    table thead {
+      border-bottom: solid 2px; }
+    table tfoot {
+      border-top: solid 2px; }
+    table.alt {
+      border-collapse: separate; }
+      table.alt tbody tr td {
+        border: solid 1px;
+        border-left-width: 0;
+        border-top-width: 0; }
+        table.alt tbody tr td:first-child {
+          border-left-width: 0px; }
+      table.alt tbody tr:first-child td {
+        border-top-width: 0px; }
+      table.alt thead {
+        border-bottom: 0; }
+      table.alt tfoot {
+        border-top: 0; }
+  
+  table tbody tr {
+    border-color: rgba(0, 0, 0, 0.25);
+    height: 50px;}
+    table tbody tr:nth-child(2n + 1) {
+      background-color: #fff; }
+  table th {
+    color: #000; 
+    height: 20px;}
+  table thead {
+    border-bottom-color: rgba(0, 0, 0, 0.25); }
+  table tfoot {
+    border-top-color: rgba(0, 0, 0, 0.25); }
+  table.alt tbody tr td {
+    border-color: rgba(0, 0, 0, 0.25); }
+
+#user
+{
+    display: none
+}
+
+/* -------MODAL-------- */
+
+  /* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 60px; /* Location of the box */
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 60%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+  }
+  
+  /* Add Animation */
+  @-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+  }
+  
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
+  
+  /* The Close Button */
+  .close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .modal-header {
+    padding: 2px 16px;
+    background-color: #08578d;
+    color: white;
+  }
+  .modal-header h2 {
+    
+    color: white;
+  }
+
+  
+  
+  .modal-body {padding: 30px 60px 60px 30px ;}
+  .modal-body .container_check
+  {
+    overflow:auto;
+    height: 400px;
+  }
+  
+  .modal-body .container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .modal-body .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .modal-body .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .modal-body .container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .modal-body .container input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .modal-body .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .modal-body .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .modal-body .container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .modal-footer {
+    padding: 2px 16px;
+    background-color: #08578d;
+    color: white;
+  }
 @media screen and (max-width: 768px) 
 {
     .container
