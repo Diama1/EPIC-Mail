@@ -660,6 +660,14 @@ table {
     font-family:Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
     display: none;
   }
+  .list #table_sent
+  {
+    display: none;
+  }
+  .list #table_draft
+  {
+    display: none;
+  }
   
 @media screen and (max-width: 768px) 
 {
