@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>EPIC Mail</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" href="../css/main.css">
+        <link src="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    </head>
+    <body>
+            <aside class="sidebar-left"> <!-- sidebar-left -->
+ 
+                <div class="logo">	
+                    <img src="../assets/img/epic.png" alt="" width="">
+                </div>
+                <ul>
+                    <li class="sidebar-menu-links"><a href="#" onclick="group();">Groups</a></li>
+                    <li class="sidebar-menu-links"><a href="#" onclick="users();">Users</a></li>
+                    
+    
+                </ul>
+
+            </aside> <!-- /sidebar-left -->
+            <aside class="sidebar-right"> <!-- sidebar-left -->
+                <div class="container" id="group">
+                    <div>
+                        <button id="show" class="button" style="margin-bottom:3%;float:left;margin-left: 15px;background-color: transparent;border:solid 1px #08578d;color:#08578d;box-shadow: 0 4px 2px -2px gray;">Create a Group</button>
+                        <!-- The Modal -->
+                        <div id="myModal" class="modal">
+
+                                <!-- Modal content -->
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <span class="close">&times;</span>
+                                    <h2>Create a Group</h2>
+                                </div>
+                                <div class="modal-body">
+                                        <div class= "form">
+                                                <form action="" method="POST">
+                                                    <input type="text" placeholder="Group name" required><br>
+                                                    
+                                                    <input type="submit" value="Save" >
+                            
+                                                </form>
+                                                
+                                            </div>
+                                </div>
+                                
+                                </div>
+                            
+                            </div>
+      
+                    </div>
+                    
+             
+                    <table>
+                        <th>Name</th>
+                        <th>Number of people</th>
+                        <th style="width:10%"></th>
+                        <th style="width:2%"></th>
+                        <th style="width:2%"></th>
+                                
+            
+                        <tr>
+                            <td style="font-weight:bold">Groups</td>
+                                      
+                        </tr>
+                        <tr>
+                            <td>Group Name</td>
+                            <td>200</td>
+                            <td ><a id="add" style="color:#5cb85c;float:left;">+ Add User </a></td>
+
+                            <!-- The Modal -->
+                        <div id="addUser" class="modal">
+
+                                <!-- Modal content -->
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <span class="close">&times;</span>
+                                    <h2>Add User</h2>
+                                </div>
+                                <div class="modal-body">
+                                    <h5>Choose users to add to group 'Group Name'</h5>
+                                        <div class= "form">
+                                            <div class="container_check">
+                                                <label class="container">User One
+                                                        <input type="checkbox" >
+                                                        <span class="checkmark"></span>
+                                                      </label>
+                                                      <label class="container">User Two
+                                                        <input type="checkbox">
+                                                        <span class="checkmark"></span>
+                                                      </label>
+                                                      <label class="container">User Three
+                                                        <input type="checkbox">
+                                                        <span class="checkmark"></span>
+                                                      </label>
+                                                      <label class="container">User Four
+                                                        <input type="checkbox">
+                                                        <span class="checkmark"></span>
+                                                      </label>
+                                                      <label class="container">User Five
+                                                            <input type="checkbox" >
+                                                            <span class="checkmark"></span>
+                                                          </label>
+                                                          <label class="container">User Six
+                                                            <input type="checkbox">
+                                                            <span class="checkmark"></span>
+                                                          </label>
+                                                          <label class="container">User Seven
+                                                            <input type="checkbox">
+                                                            <span class="checkmark"></span>
+                                                          </label>
+                                                          <label class="container">User Eight
+                                                            <input type="checkbox">
+                                                            <span class="checkmark"></span>
+                                                          </label>
+                                            </div>
+                                        </div>
+                                        <input type="submit" value="Add Users" >
+                                        <input type="submit" value="Cancel" style="margin-right:100px;color:#08578d;background-color:transparent;border-color:#08578d" >
+                                </div>
+                                
+                                </div>
+                            
+                            </div>
+      
+
+                            <td style="width:10px"><a ><img src="../assets/img/garbage.png" width="20px"></a></td>
+                            
+                            <td style="width:10px"><a><img src="../assets/img/edit.png" width="20px"></a></td>
+                                    
+                        </tr>
+                        <tr>
+                            <td>Group Name</td>
+                            <td>200</td>
+                            <td style="color:#5cb85c;float:left;">+ Add User </a></td>
+                            <td><a><img src="../assets/img/garbage.png" width="20px"></a></td>
+                            <td style="width:10px"><a><img src="../assets/img/edit.png" width="20px"></a></td>
+                        </tr>
+                        <tr>
+                            <td>Group Name</td>
+                            <td>200</td>
+                            <td style="color:#5cb85c">+ Add User </td>
+                            <td><a><img src="../assets/img/garbage.png" width="20px"></a></td>
+                            <td style="width:10px"><a><img src="../assets/img/edit.png" width="20px"></a></td>
+                        </tr>
+                        <tr>
+                            <td>Group Name</td>
+                            <td>200</td>
+                            <td style="color:#5cb85c">+ Add User </td>
+                            <td><a data-popup-open= "delete1"><img src="../assets/img/garbage.png" width="20px"></a></td>
+                            
+                            
+                            <td style="width:10px"><a><img src="../assets/img/edit.png" width="20px"></a></td>
+                            
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="container" id="user">
+                        <div>
+                            <input type="text" placeholder="Search"  style="margin-bottom:3%;width:30%;float:left;margin-left: 15px;background-color: transparent;border:solid 1px #08578d;color:#08578d;box-shadow: 0 4px 2px -2px gray;">
+                        </div>
+                 
+                        <table>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th >Phone Number</th>
+                            <th style="width:2%"></th>
+                            <th style="width:2%"></th>
+                                    
+                
+                            <tr>
+                                <td style="font-weight:bold">Users</td>
+                                          
+                            </tr>
+                            <tr>
+                                <td>User </td>
+                                <td>example@gmail.com</td>
+                                <td>078728278</td>
+                                <td style="width:10px"><img src="../assets/img/garbage.png" width="20px"></td>
+                                <td style="width:10px"><img src="../assets/img/edit.png" width="20px"></td>
+                                        
+                            </tr>
+                            <tr>
+                                <td>User</td>
+                                <td>example@gmail.com</td>
+                                <td>078728278</td>
+                                <td><img src="../assets/img/garbage.png" width="20px"></td>
+                                <td style="width:10px"><img src="../assets/img/edit.png" width="20px"></td>
+                            </tr>
+                            <tr>
+                                <td>User</td>
+                                <td>example@gmail.com</td>
+                                <td>078728278</td>
+                                <td><img src="../assets/img/garbage.png" width="20px"></td>
+                                <td style="width:10px"><img src="../assets/img/edit.png" width="20px"></td>
+                            </tr>
+                            <tr>
+                                <td>User</td>
+                                <td>example@gmail.com</td>
+                                <td>078728278</td>
+                                <td><img src="../assets/img/garbage.png" width="20px"></td>
+                                <td style="width:10px"><img src="../assets/img/edit.png" width="20px"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                
+                
+            </aside> <!-- /sidebar-left -->
+
+            
+            
+
+        <script>
+            (function () {
+			var links = ('.sidebar-menu-links > a');
+			links.on('click', function () {
+				links.removeClass('selected');
+				(this).addClass('selected');
+			});
+		});
+                
+        </script>
+        <script>
+            function group() {
+                document.getElementById("group").style.display = "block";
+                document.getElementById("user").style.display = "none";
+            }
+            function users() {
+                document.getElementById("user").style.display = "block";
+                document.getElementById("group").style.display = "none";
+            }
+            
+
+        </script>
+        <script>
+                // Get the modal
+                var modal = document.getElementById('myModal');
+                var adduser = document.getElementById('addUser');
+                
+                
+                // Get the button that opens the modal
+                var btn = document.getElementById("show");
+                var user = document.getElementById("add");
+                
+                
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close");
+                
+                // When the user clicks the button, open the modal 
+                btn.onclick = function() {
+                  modal.style.display = "block";
+                }
+
+                user.onclick = function() {
+          adduser.style.display = "block";
+        }
+                
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function() {
+                  modal.style.display = "none";
+                }
+
+                span.onclick = function() {
+          adduser.style.display = "none";
+        }
+                
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                  if (event.target == modal) {
+                    modal.style.display = "none";
+                  }
+                }
+
+                window.onclick = function(event) {
+          if (event.target == adduser) {
+            adduser.style.display = "none";
+          }
+        }
+                </script>
+
+
+
+
+
+        <script src="../js/main.js"></script>
+    </body>
+</html>
