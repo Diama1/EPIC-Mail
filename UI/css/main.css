@@ -82,7 +82,8 @@ html, body
     input[type="search"],
     input[type="url"],
     select,
-    textarea
+    textarea,
+    .input
     {
         -moz-appearance: none;
         -webkit-appearance: none;
