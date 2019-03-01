@@ -116,6 +116,7 @@ html, body
     input[type="submit"],
 input[type="reset"],
 input[type="button"],
+#item,
 
 .button {
   -moz-appearance: none;
@@ -141,6 +142,7 @@ input[type="button"],
   input[type="submit"],
 input[type="reset"],
 input[type="button"],
+#item,
 
 .button {
   background-color: #08578d;
@@ -150,6 +152,7 @@ input[type="button"],
   input[type="reset"]:hover,
   input[type="button"]:hover,
   button:hover,
+  #item:hover,
   .button:hover {
     box-shadow: inset 0 0 0 1px #08578d;
     background-color: transparent;
@@ -158,6 +161,7 @@ input[type="button"],
     input[type="reset"]:hover:active,
     input[type="button"]:hover:active,
     button:hover:active,
+    #item,
     .button:hover:active {
       background-color: transparent;
     color:#08578d;
@@ -638,17 +642,13 @@ table {
     border-right: solid 1px #fff;
     overflow:auto;
   }
-  .inbox #item
-  {
-    background-color: transparent;
-    border:solid 1px #fff;
-    border-color: #fff;
-  }
-  .inbox .active
+  .inbox .item
   {
     background-color: rgba(255, 255, 255, 0.25);
     border:solid 1px #fff;
+    border-color: #fff;
   }
+  
   .inbox .list a
   {
     color:#000;

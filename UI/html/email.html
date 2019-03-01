@@ -81,17 +81,17 @@
 
                             </li><br><br>
                             <li>
-                                <button class="button active" onclick="hideMessage()"  id="item_active" style="width:271px;border-radius:10px 0px 0px 10px;color: white;float:left">Inbox   
+                                <button class="item" onclick="hideMessage()"  id="item" style="width:271px;border-radius:10px 0px 0px 10px;color: white;float:left">Inbox   
 
                                 </button><br><br>
                             </li><br><br>
                             <li>
-                                <button class="button " id="item" style="width:271px;border-radius:10px 0px 0px 10px;color: white;float:left">Sent
+                                <button  onclick="sent()" id="item" style="width:271px;border-radius:10px 0px 0px 10px;color: white;float:left">Sent
 
                                 </button><br><br>
                             </li><br><br>
                             <li>
-                                <button class="button" id="item" style="width:271px;border-radius:10px 0px 0px 10px;color: white;float:left">Draft
+                                <button  id="item" style="width:271px;border-radius:10px 0px 0px 10px;color: white;float:left">Draft
 
                                 </button><br><br>
                             </li><br><br>
@@ -102,26 +102,59 @@
 
             </div>
             <div class="list">
-                <table id="table">
-                    <tr data-href="#pinterest" onclick="showMessage()">
-                        <td><a href="#pinterest" >Pinterest</a></td>
+                    
+                <table id="table_sent">
+                    
+                    <tr data-href="#pinterest" onclick="showSent()">
+                        <td><a href="#pinterest" >To:Pinterest</a></td>
                         <td><a href="#pinterest"><b>We think you might like these Pins</b></a></td>
                         <td><a href="#pinterest" style="color:#898989">We found some fresh Pins for you</a></td>
                         <td><a href="#pinterest">8:20</a></td>
 
                     </tr>
-                    <tr data-href="#pinterest" onclick="showMessage()">
-                            <td><a href="##pinterest">Pinterest</a></td>
+                    <tr data-href="#pinterest" onclick="showSent()">
+                            <td><a href="##pinterest">To:Pinterest</a></td>
                             <td><a href="##pinterest"><b>We think you might like these Pins</b></a></td>
                             <td><a href="#" style="color:#898989">We found some fresh Pins for you</a></td>
                             <td><a href="#">8:20</a></td>
     
                         </tr>
-                        <tr data-href="#pinterest" onclick="showMessage()">
-                                <td><a href="#pinterest">Pinterest</a></td>
+                        <tr data-href="#pinterest" onclick="showSent()">
+                                <td><a href="#pinterest">To:Pinterest</a></td>
                                 <td><a href="#pinterest"><b>We think you might like these Pins</b></a></td>
                                 <td><a href="#pinterest" style="color:#898989">We found some fresh Pins for you</a></td>
                                 <td><a href="#pinterest">8:20</a></td>
+        
+                            </tr>
+                            <tr data-href="#pinterest" onclick="showSent()">
+                                    <td><a href="#pinterest">To:Pinterest</a></td>
+                                    <td><a href="#pinterest"><b>We think you might like these Pins</b></a></td>
+                                    <td><a href="#pinterest" style="color:#898989">We found some fresh Pins for you</a></td>
+                                    <td><a href="#pinterest">8:20</a></td>
+            
+                                </tr>
+                                <tr data-href="#pinterest" onclick="showSent()">
+                                        <td><a href="#pinterest">To:Pinterest</a></td>
+                                        <td><a href="#pinterest"><b>We think you might like these Pins</b></a></td>
+                                        <td><a href="#pinterest" style="color:#898989">We found some fresh Pins for you</a></td>
+                                        <td><a href="#pinterest">8:20</a></td>
+                
+                                    </tr>
+                </table>
+
+                <table id="table_inbox">
+                        <tr data-href="#pinterest" onclick="showMessage()">
+                            <td><a href="#pinterest" >Pinterest</a></td>
+                            <td><a href="#pinterest"><b>We think you might like these Pins</b></a></td>
+                            <td><a href="#pinterest" style="color:#898989">We found some fresh Pins for you</a></td>
+                            <td><a href="#pinterest">8:20</a></td>
+    
+                        </tr>
+                        <tr data-href="#pinterest" onclick="showMessage()">
+                                <td><a href="##pinterest">Pinterest</a></td>
+                                <td><a href="##pinterest"><b>We think you might like these Pins</b></a></td>
+                                <td><a href="#" style="color:#898989">We found some fresh Pins for you</a></td>
+                                <td><a href="#">8:20</a></td>
         
                             </tr>
                             <tr data-href="#pinterest" onclick="showMessage()">
@@ -138,7 +171,14 @@
                                         <td><a href="#pinterest">8:20</a></td>
                 
                                     </tr>
-                </table>
+                                    <tr data-href="#pinterest" onclick="showMessage()">
+                                            <td><a href="#pinterest">Pinterest</a></td>
+                                            <td><a href="#pinterest"><b>We think you might like these Pins</b></a></td>
+                                            <td><a href="#pinterest" style="color:#898989">We found some fresh Pins for you</a></td>
+                                            <td><a href="#pinterest">8:20</a></td>
+                    
+                                        </tr>
+                    </table>
                 <div class="msg" id="msg">
                     <h3>We think you might like these Pins</h3><br><br>
                     <h5 style="font-weight:900">Pinterest <span style="font-weight:300">Contact@pinterest.com</span></h5>
@@ -209,14 +249,30 @@
 
                 }
                 function showMessage() {
-                    document.getElementById('table').style.display = "none";
+                    document.getElementById('table_inbox').style.display = "none";
                     document.getElementById('msg').style.display = "block";
                 }
                 function hideMessage() {
-                    document.getElementById('table').style.display = "block";
+                    document.getElementById('table_inbox').style.display = "block";
+                    document.getElementById('msg').style.display = "none";
+                    document.getElementById('table_sent').style.display = "none";
+                    
+
+                }
+
+                function showSent() {
+                    document.getElementById('table_sent').style.display = "none";
+                    document.getElementById('msg').style.display = "block";
+                }
+                function sent() {
+                    document.getElementById('table_inbox').style.display = "none";
+                    document.getElementById('table_sent').style.display = "block";
+                    
                     document.getElementById('msg').style.display = "none";
                 }
                 </script>
+
+
 
         
     </body>
