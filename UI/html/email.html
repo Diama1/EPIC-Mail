@@ -32,9 +32,53 @@
             <div class="menu">
                     <ul>
                             <li>
-                                <button class="button" style="width:143px;border-radius:10px;background-color:white;color: #000;float:left">New Message
+                                <button class="button" id="show" style="width:143px;border-radius:10px;background-color:white;color: #000;float:left">New Message
 
                                 </button><br><br>
+                                <!-- The Modal -->
+                        <div id="myModal" class="modal">
+
+                                <!-- Modal content -->
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                        <span class="close" onclick="document.getElementById('myModal').style.display='none'" >&times;</span>
+                                    <h2>New Message</h2>
+                                </div>
+                                <div class="modal-body">
+                                        <div class= "form">
+                                                <form action="" method="POST">
+                                                    <div class="input" id="to">
+                                                        <input type="text" placeholder="To"  style="border:none;width:50%;float:left">
+                                                        <a href="#" onclick="group()">Groups</a>
+                                                    </div><br>
+                                                   
+                                                    <select id="groups" name="carlist" form="carform" style="display:none">
+                                                            <option value="volvo" >Select a Group</option>
+                                                            <option value="saab">Saab</option>
+                                                            <option value="opel">Opel</option>
+                                                            <option value="audi">Audi</option>
+                                                          </select>
+                                                          <br>
+                                                          <input type="text" placeholder="Subject" ><br>
+                                                          
+                                                          <textarea rows="4" cols="50" placeholder="Describe yourself here...">
+
+                                                          </textarea><br>
+                                                    
+                                                    <input type="submit" value="Send" >
+                                                    
+                            
+                                                </form>
+                                                <Button  class="button" onclick="document.getElementById('myModal').style.display='none'" style="margin-right:100px;color:#08578d;background-color:transparent;border-color:#08578d"> Save </Button>
+                                                <Button  class="button" onclick="document.getElementById('myModal').style.display='none'" style="margin-right:100px;color:#08578d;background-color:transparent;border-color:#08578d"> Cancel</Button>
+                                                
+                                            </div>
+                                </div>
+                                
+                                </div>
+                            
+                            </div>
+
                             </li><br><br>
                             <li>
                                 <button class="button active" id="item_active" style="width:271px;border-radius:10px 0px 0px 10px;color: white;float:left">Inbox   
@@ -108,6 +152,51 @@
 
         
         </script>
+        <script>
+                // Get the modal
+                var modal = document.getElementById('myModal');
+                
+                
+                // Get the button that opens the modal
+                var btn = document.getElementById("show");
+                
+                
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close");
+                
+                // When the user clicks the button, open the modal 
+                btn.onclick = function() {
+                  modal.style.display = "block";
+                }
+                
+                
+                // When the user clicks on <span> (x), close the modal
+                function close() {
+                    modal.style.display = "none";
+
+                }
+                
+                
+
+                
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                  if (event.target == modal) {
+                    modal.style.display = "none";
+                  }
+                }
+                
+
+                
+                </script>
+                <script>
+                function group() {
+                    document.getElementById('groups').style.display = "block";
+                    document.getElementById('to').style.display = "none";
+
+
+                }
+                </script>
 
         
     </body>
