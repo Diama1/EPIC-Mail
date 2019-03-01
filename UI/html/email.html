@@ -91,7 +91,7 @@
                                 </button><br><br>
                             </li><br><br>
                             <li>
-                                <button  id="item" style="width:271px;border-radius:10px 0px 0px 10px;color: white;float:left">Draft
+                                <button  id="item" onclick="draft()" style="width:271px;border-radius:10px 0px 0px 10px;color: white;float:left">Draft
 
                                 </button><br><br>
                             </li><br><br>
@@ -179,13 +179,89 @@
                     
                                         </tr>
                     </table>
-                <div class="msg" id="msg">
+
+                    <div class="msg" id="msg">
+                            <h3>We think you might like these Pins</h3><br><br>
+                            <h5 style="font-weight:900">Pinterest <span style="font-weight:300">Contact@pinterest.com</span></h5>
+                            <hr>
+                            <h5>Hello,<br>
+                                This is the message form pinterest. And we can see that it can work.
+                            </h5>
+                            <Button  class="button" onclick="document.getElementById('myModal').style.display='block'"  style="margin-right:100px;color:#08578d;background-color:transparent;border-color:#08578d">Reply</Button>
+        
+        
+                        </div>
+                    <table id="table_draft">
+                            <tr data-href="#pinterest" onclick="showdraft()">
+                                <td><a href="#pinterest" >Draft</a></td>
+                                <td><a href="#pinterest"><b>We think you might like these Pins</b></a></td>
+                                <td><a href="#pinterest" style="color:#898989">We found some fresh Pins for you</a></td>
+                                <td><a href="#pinterest">8:20</a></td>
+        
+                            </tr>
+                            <tr data-href="#pinterest" onclick="showdraft()">
+                                    <td><a href="#pinterest" >Draft</a></td>
+                                    <td><a href="##pinterest"><b>We think you might like these Pins</b></a></td>
+                                    <td><a href="#" style="color:#898989">We found some fresh Pins for you</a></td>
+                                    <td><a href="#">8:20</a></td>
+            
+                                </tr>
+                                <tr data-href="#pinterest" onclick="showdraft()">
+                                        <td><a href="#pinterest" >Draft</a></td>
+                                        <td><a href="#pinterest"><b>We think you might like these Pins</b></a></td>
+                                        <td><a href="#pinterest" style="color:#898989">We found some fresh Pins for you</a></td>
+                                        <td><a href="#pinterest">8:20</a></td>
+                
+                                    </tr>
+                                    <tr data-href="#pinterest" onclick="showdraft()">
+                                            <td><a href="#pinterest" >Draft</a></td>
+                                            <td><a href="#pinterest"><b>We think you might like these Pins</b></a></td>
+                                            <td><a href="#pinterest" style="color:#898989">We found some fresh Pins for you</a></td>
+                                            <td><a href="#pinterest">8:20</a></td>
+                    
+                                        </tr>
+                                        <tr data-href="#pinterest" onclick="showdraft()">
+                                                <td><a href="#pinterest" >Draft</a></td>
+                                                <td><a href="#pinterest"><b>We think you might like these Pins</b></a></td>
+                                                <td><a href="#pinterest" style="color:#898989">We found some fresh Pins for you</a></td>
+                                                <td><a href="#pinterest">8:20</a></td>
+                        
+                                            </tr>
+                        </table>
+                <div class="msg" id="draft">
                     <h3>We think you might like these Pins</h3><br><br>
                     <h5 style="font-weight:900">Pinterest <span style="font-weight:300">Contact@pinterest.com</span></h5>
                     <hr>
-                    <h5>Hello,<br>
-                        This is the message form pinterest. And we can see that it can work.
-                    </h5>
+
+                    <div class= "form">
+                            <form action="" method="POST">
+                                <div class="input" id="to">
+                                    <input type="text" placeholder="To"  style="border:none;width:50%;float:left">
+                                    <a href="#" onclick="group()">Groups</a>
+                                </div><br>
+                               
+                                <select id="groups" name="carlist" form="carform" style="display:none">
+                                        <option value="volvo" >Select a Group</option>
+                                        <option value="saab">Saab</option>
+                                        <option value="opel">Opel</option>
+                                        <option value="audi">Audi</option>
+                                      </select>
+                                      <br>
+                                      <input type="text" placeholder="Subject" ><br>
+                                      
+                                      <textarea rows="4" cols="50" placeholder="Describe yourself here...">
+
+                                      </textarea><br>
+                                
+                                <input type="submit" value="Send" >
+                                
+        
+                            </form>
+                            <Button  class="button" onclick="document.getElementById('myModal').style.display='none'" style="margin-right:100px;color:#08578d;background-color:transparent;border-color:#08578d"> Save </Button>
+                            <Button  class="button" onclick="document.getElementById('myModal').style.display='none'" style="margin-right:100px;color:#08578d;background-color:transparent;border-color:#08578d"> Delete</Button>
+                            
+                        </div>
+                    
                     <Button  class="button" onclick="document.getElementById('myModal').style.display='block'"  style="margin-right:100px;color:#08578d;background-color:transparent;border-color:#08578d">Reply</Button>
 
 
@@ -255,6 +331,8 @@
                 function hideMessage() {
                     document.getElementById('table_inbox').style.display = "block";
                     document.getElementById('msg').style.display = "none";
+                    document.getElementById('draft').style.display = "none";
+                    document.getElementById('table_draft').style.display = "none";
                     document.getElementById('table_sent').style.display = "none";
                     
 
@@ -267,7 +345,21 @@
                 function sent() {
                     document.getElementById('table_inbox').style.display = "none";
                     document.getElementById('table_sent').style.display = "block";
-                    
+                    document.getElementById('table_draft').style.display = "none";
+                    document.getElementById('draft').style.display = "none";
+                    document.getElementById('msg').style.display = "none";
+                }
+
+                function showdraft() {
+                    document.getElementById('table_draft').style.display = "none";
+                    document.getElementById('draft').style.display = "block";
+                }
+                
+                function draft() {
+                    document.getElementById('table_inbox').style.display = "none";
+                    document.getElementById('table_sent').style.display = "none";
+                    document.getElementById('table_draft').style.display = "block";
+                    document.getElementById('draft').style.display = "none";
                     document.getElementById('msg').style.display = "none";
                 }
                 </script>
