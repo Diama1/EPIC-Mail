@@ -656,6 +656,10 @@ table {
   .inbox *[data-href] {
     cursor: pointer;
   }
+  .list .msg{
+    font-family:Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    display: none;
+  }
   
 @media screen and (max-width: 768px) 
 {
