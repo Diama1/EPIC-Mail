@@ -22,6 +22,23 @@ const accountController = {
             }]
         })
         
+    },
+    login(req,res) {
+        const userlogin = userAccountModel.login(req,req);
+        if (!userlogin.status) {
+            return {
+                status: 401,
+                Error: userlogin.message
+            }
+        }
+        return res.status(200).send({
+            status: 200,
+            data: [{
+                token: userlogin.token,
+            }]
+        })
+
+
     }
 }
 

@@ -20,6 +20,33 @@ class User_Account {
         const token = Helper.generateToken(newUser.id);
         return token;
     }
+
+    login(email, password){
+        const findUser = this.users.find(user => user.email === email.body.email);
+
+        if (!findUser) {
+            return {
+                status: false,
+                message: 'Wrong credentials!'
+            }
+        
+        
+        }
+        const comparePaswword = Helper.comparePassword(findUser.password, password.body.password);
+        if (!comparePaswword){
+
+            return {
+                status: false,
+                message: 'Wrong credentials!'
+            }
+
+        }
+        const token = Helper.generateToken(findUser.id)
+        return {
+            status: true,
+            token,
+        }
+    }
 }
 
 export default new User_Account;
