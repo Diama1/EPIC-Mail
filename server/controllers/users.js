@@ -1,4 +1,4 @@
-import userAccountModel from '../models/create_account';
+import userAccountModel from '../models/users';
 
 const accountController = {
 

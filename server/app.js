@@ -1,5 +1,5 @@
 import express from 'express';
-import accountRoute from './routes/create_account';
+import accountRoute from './routes/users';
 import bodyParser from 'body-parser';
 
 
@@ -8,10 +8,10 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 
-app.use('/api/v1/create_account',accountRoute);
+app.use(accountRoute);
 
 const port = process.env.port || 8000;
-console.log( process.env.SECRET);
+
 
 
 app.listen(port, () => {
