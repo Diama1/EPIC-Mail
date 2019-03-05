@@ -10,8 +10,8 @@ router.post('/api/v1/auth/login', account_controller.login);
 
 // MESSAGES ROUTES
 
-router.post('/api/v1/message', messageController.createMessage);
-
+router.post('/api/v1/messages', messageController.createMessage);
+router.delete('/api/v1/messages/:id', messageController.deleteMessage)
 
 
 
