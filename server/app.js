@@ -1,5 +1,5 @@
 import express from 'express';
-import accountRoute from './routes/users';
+import userRoute from './routes/users';
 import bodyParser from 'body-parser';
 
 
@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 
-app.use(accountRoute);
+app.use(userRoute);
 
 const port = process.env.port || 8000;
 
