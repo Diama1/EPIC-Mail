@@ -25,12 +25,13 @@ const accountController = {
     },
     login(req,res) {
         const userlogin = userAccountModel.login(req,req);
-        if (!userlogin.status) {
-            return {
+        if (userlogin.status == false) {
+            return res.status(401).send({
                 status: 401,
-                Error: userlogin.message
-            }
+                Error: userlogin.message,
+            })
         }
+               
         return res.status(200).send({
             status: 200,
             data: [{
