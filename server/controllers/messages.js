@@ -10,7 +10,13 @@ const Messages = {
             data : [newMessage]
         })
     },
-    
+    getSpecifiMessage(req,res) {
+        const specific_message = messageModel.getOneMessage(req.params.id);
+        res.status(200).send({
+            status:200,
+            data : [specific_message]
+        })
+    },
 
 
 
