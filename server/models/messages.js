@@ -10,12 +10,22 @@ class Message {
         const newMessage = {
             id: this.messages.length + 1,
             createdOn: moment(new Date()),
-            subject:message.body.subject,
-            message:message.body.message,
-            status: 'sent'
+            subject: message.body.subject,
+            message: message.body.message,
+            SenderID: this.messages.length + 2,
+            receiverID: 1,
+            ParrentMessageId: this.messages.length + 1,
+            status: message.body.status
         }
         this.messages.push(newMessage);
         return newMessage
+    }
+    
+
+
+
+    getAllMessages() {
+        return this.messages;
     }
 
     getOneMessage(id) {

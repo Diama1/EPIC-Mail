@@ -10,6 +10,17 @@ const Messages = {
             data : [newMessage]
         })
     },
+    
+
+    getAllMessages(req, res) {
+
+        const allMessages = messageModel.getAllMessages();
+        res.status(200).send({
+            status:200,
+            data: allMessages
+        })
+
+    },
     getSpecifiMessage(req,res) {
         const specific_message = messageModel.getOneMessage(req.params.id);
         res.status(200).send({
