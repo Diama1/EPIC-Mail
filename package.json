@@ -9,6 +9,10 @@
     "build": "babel server/app.js --out-dir build",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
+
+  "engines": {
+    "node": "10.14.2"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Diama1/EPIC-Mail.git"
