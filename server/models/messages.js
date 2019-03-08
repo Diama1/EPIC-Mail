@@ -29,11 +29,11 @@ class Message {
     }
 
     getUnreadMessage(status) {
-        return this.messages.filter(msg => msg.status === status)
+        return this.messages.find(msg => msg.status === status)
     }
 
     getOneMessage(id) {
-        return this.messages.find(msg => msg.id === parseInt(id,10));
+        return this.messages.find(msge => msge.id === parseInt(id,10));
     }
 
 
