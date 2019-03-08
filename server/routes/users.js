@@ -16,6 +16,8 @@ router.get('/api/v1/messages', messageController.getAllMessages)
 router.get('/api/v1/messages/:id', messageController.getSpecifiMessage);
 
 
+router.get('/api/v1/messages/:status', messageController.getUnreadMessage);
+
 
 
 export default router;

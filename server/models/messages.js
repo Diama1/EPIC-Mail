@@ -28,9 +28,14 @@ class Message {
         return this.messages;
     }
 
+    getUnreadMessage(status) {
+        return this.messages.filter(msg => msg.status === status)
+    }
+
     getOneMessage(id) {
         return this.messages.find(msg => msg.id === parseInt(id,10));
     }
+
 
     deleteMessage(id) {
         const messageIndex = this.messages.findIndex(msg => {

@@ -28,6 +28,15 @@ const Messages = {
             data : [specific_message]
         })
     },
+    getUnreadMessage(req,res) {
+        const unread_message = messageModel.getUnreadMessage(req.params.status);
+        res.status(200).send({
+            status:200,
+            data : [unread_message]
+        })
+
+    },
+
 
 
 

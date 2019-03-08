@@ -9,11 +9,11 @@ chai.use(chaiHttp);
 describe('Create Account', () => {
     it('it should create User account', (done) => {
         chai.request(server)
-        .post('/api/v1/create_account')
+        .post('/api/v1/auth/signup')
         .send({
             name:"Diane",
-            email:"dmahoro@gmail.com",
-            password: "sddsd"
+            email:"dmahoro1@gmail.com",
+            password: "hjhadja"
         })
 
         .end((err, res) => {
@@ -23,4 +23,20 @@ describe('Create Account', () => {
     })
 })
 
+
+    // first you have to log in to get a token
+    it('you should Log in to get the token ', (done) => {
+      chai.request(server)
+        .post('/api/v1/auth/login')
+        .send({
+          email: 'dmahoro1@gmail.com',
+          password: 'hjhadja',
+        })
+        .end((err, res) => {
+          res.should.have.status(200);
+          res.body.should.be.an('object');
+          done();
+        });
+    })
 })
+
