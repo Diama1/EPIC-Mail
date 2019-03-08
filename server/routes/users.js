@@ -11,7 +11,7 @@ router.post('/api/v1/auth/login', account_controller.login);
 // MESSAGES ROUTES
 
 router.post('/api/v1/messages', messageController.createMessage);
-router.delete('/api/v1/messages/:id', messageController.deleteMessage);
+router.delete('/api/v1/messages/:id', messageController.deleteMessage)
 router.get('/api/v1/messages/:id', messageController.getSpecifiMessage);
 router.get('/api/v1/messages', messageController.getAllMessages);
 router.get('/api/v1/messages/status/:status', messageController.getUnreadMessage);
