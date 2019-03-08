@@ -10,7 +10,6 @@ const Messages = {
             data : [newMessage]
         })
     },
-    
 
     getAllMessages(req, res) {
 
@@ -21,6 +20,7 @@ const Messages = {
         })
 
     },
+
     getSpecifiMessage(req,res) {
         const specific_message = messageModel.getOneMessage(req.params.id);
         res.status(200).send({
@@ -28,6 +28,7 @@ const Messages = {
             data : [specific_message]
         })
     },
+
     getUnreadMessage(req,res) {
         const unread_message = messageModel.getUnreadMessage(req.params.status);
         console.log(req.params.status);
@@ -37,9 +38,6 @@ const Messages = {
         })
 
     },
-
-
-
 
     deleteMessage(req,res) {
         const message_to_delete = messageModel.getOneMessage(req.params.id);
