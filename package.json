@@ -23,7 +23,6 @@
   },
   "homepage": "https://github.com/Diama1/EPIC-Mail#readme",
   "devDependencies": {
-    "babel-watch": "^7.0.0",
     "chai": "^4.2.0",
     "chai-http": "^4.2.1",
     "coveralls": "^3.0.3",
@@ -37,7 +36,7 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
-    "babel-watch": "^2.0.8",
+    "babel-watch": "^7.0.0",
     "bcrypt": "^3.0.4",
     "body-parser": "^1.18.3",
     "dotenv": "^6.2.0",
