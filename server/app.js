@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 
 app.use(userRoute);
 
-const port = process.env.port || 8000;
+const port = process.env.PORT || 8000;
 
 
 
