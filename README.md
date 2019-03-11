@@ -15,10 +15,9 @@ EPIC Mail is a Web-based email platform that enables user to communicate using e
 
 # Prerequisites
 The required tools : 
-    * Node : 10.14.1 
+    * Node : 10.14.2
     * NPM : 6.4.1
-    * ESLINT 
-    * AIRBNB Style guide
+    
     
     
 # Setting up Dev
