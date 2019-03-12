@@ -1,8 +1,0 @@
-language : node_js
-node_js :
-  - "10.14.2"
-script :
-  - npm install
-  - npm test
-after_success :
-  - npm run coverage
