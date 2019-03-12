@@ -4,7 +4,7 @@
   "description": "An email platform",
   "main": "index.js",
   "scripts": {
-    "test": "nyc --reporter=html --reporter=text mocha --require @babel/core/register --timeout 5000 server/tests/*.js --exit",
+    "test": "nyc --reporter=html --reporter=text mocha --require @babel/register --timeout 5000 server/tests/*.js --exit",
     "start": "babel-watch server/app.js",
     "build": "babel server/app.js --out-dir build",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/Diama1/EPIC-Mail#readme",
   "devDependencies": {
+    "@babel/register": "^7.0.0",
     "chai": "^4.2.0",
     "chai-http": "^4.2.1",
     "coveralls": "^3.0.3",
