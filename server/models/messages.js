@@ -29,7 +29,7 @@ class Message {
     }
 
     getUnreadMessage(status) {
-        return this.messages.find(msg => msg.status === status)
+        return this.messages.filter(msg => msg.status === status)
     }
 
     getOneMessage(id) {

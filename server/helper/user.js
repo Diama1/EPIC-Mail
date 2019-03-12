@@ -4,12 +4,12 @@ import SECRET from '../../env';
 
 const Helper = {
 
-  hashPassword(password) {
+  EncryptPassword(password) {
     return bcrypt.hashSync(password, bcrypt.genSaltSync(8))
   },
   
-  comparePassword(hashPassword, password) {
-    return bcrypt.compareSync(password, hashPassword);
+  comparePassword(EncryptPassword, password) {
+    return bcrypt.compareSync(password, EncryptPassword);
   },
  
  

@@ -4,7 +4,7 @@
   "description": "An email platform",
   "main": "index.js",
   "scripts": {
-    "test": "nyc --reporter=html --reporter=text mocha --require babel-core/register --timeout 5000 server/tests/*.js --exit",
+    "test": "nyc --reporter=html --reporter=text mocha --require @babel/core/register --timeout 5000 server/tests/*.js --exit",
     "start": "babel-watch server/app.js",
     "build": "babel server/app.js --out-dir build",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
@@ -32,8 +32,8 @@
     "nyc": "^13.1.0"
   },
   "dependencies": {
+    "@babel/core": "^7.3.4",
     "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "babel-watch": "^7.0.0",
     "bcrypt": "^3.0.4",

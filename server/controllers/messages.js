@@ -34,7 +34,7 @@ const Messages = {
         console.log(req.params.status);
         res.status(200).send({
             status:200,
-            data : [unread_message]
+            data : unread_message
         })
 
     },

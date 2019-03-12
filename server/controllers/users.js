@@ -9,11 +9,7 @@ const accountController = {
                 Error: 'There is an empty field!'
             })
 
-            
-        
-        }
-        
-
+        }  
         const userToken = userAccountModel.createUserAccount(req);
         res.status(201).send({
             status: 201,

@@ -7,7 +7,7 @@ class User_Account {
     }
 
     createUserAccount(user){
-        const hashPassword = Helper.hashPassword(user.body.password);
+        const hashPassword = Helper.EncryptPassword(user.body.password);
         const newUser = {
             id:this.users.length + 1,
             name:user.body.name,
