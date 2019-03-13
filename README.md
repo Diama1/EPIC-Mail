@@ -4,7 +4,7 @@ EPIC MAIL
 ===================================
 EPIC Mail is a Web-based email platform that enables user to communicate using electronic devices. The use can create an account and login to read or send the emails. The admin can create groups so that the user can communicate in a group instead of individual communication.
 
-[![Build Status] https://travis-ci.com/Diama1/EPIC-Mail.svg?branch=develop [![Coverage Status](https://coveralls.io/repos/github/Diama1/EPIC-Mail/badge.svg?branch=develop)](https://coveralls.io/github/Diama1/EPIC-Mail?branch=develop)
+[![Build Status](https://travis-ci.com/Diama1/EPIC-Mail.svg?branch=master)](https://travis-ci.com/Diama1/EPIC-Mail) [![Coverage Status](https://coveralls.io/repos/github/Diama1/EPIC-Mail/badge.svg?branch=develop)](https://coveralls.io/github/Diama1/EPIC-Mail?branch=develop)
 
 ## Features
 
