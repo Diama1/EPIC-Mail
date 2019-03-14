@@ -1,17 +1,17 @@
 import messageModel from '../models/messages';
 
 
-const Messages = {
+class Messages {
 
-    createMessage(req,res) {
+    static createMessage(req, res) {
         const newMessage = messageModel.CreateMessage(req)
         res.status(201).send({
             status:201,
             data : [newMessage]
         })
-    },
+    }
 
-    getAllMessages(req, res) {
+    static getAllMessages(req, res) {
 
         const allMessages = messageModel.getAllMessages();
         res.status(200).send({
@@ -19,41 +19,40 @@ const Messages = {
             data: allMessages
         })
 
-    },
+    }
 
-    getSpecifiMessage(req,res) {
-        const specific_message = messageModel.getOneMessage(req.params.id);
+    static getSpecifiMessage(req, res) {
+        const specificMessage = messageModel.getOneMessage(req.params.id);
         res.status(200).send({
             status:200,
-            data : [specific_message]
+            data : [specificMessage]
         })
-    },
+    }
 
-    getUnreadMessage(req,res) {
-        const unread_message = messageModel.getUnreadMessage(req.params.status);
-        console.log(req.params.status);
+    static getUnreadMessage(req, res) {
+        const unreadMessage = messageModel.getUnreadMessage(req.params.status);
         res.status(200).send({
             status:200,
-            data : unread_message
+            data : unreadMessage
         })
 
-    },
+    }
 
-    deleteMessage(req,res) {
-        const message_to_delete = messageModel.getOneMessage(req.params.id);
-        if (!message_to_delete) {
+    static deleteMessage(req,res) {
+        const messageToDelete = messageModel.getOneMessage(req.params.id);
+        if (!messageToDelete) {
             res.status(404).send({
                 status: 404,
-                Error: message_to_delete.message
+                Error: messageToDelete.message
                 
             })
         }
         else {
-            const delete_message = messageModel.deleteMessage(req.params.id);
+            const deleteMessage = messageModel.deleteMessage(req.params.id);
             res.status(200).send({
                 status:200,
                 data:[{ 
-                    message: delete_message.message
+                    message: deleteMessage.message
                 }]
             })
             
@@ -61,8 +60,6 @@ const Messages = {
         }
 
     }
-
-    
 }
 
 export default Messages;

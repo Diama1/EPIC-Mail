@@ -1,6 +1,6 @@
 import Helper from '../helper/user';
 
-class User_Account {
+class UserAccount {
 
     constructor() {
         this.users = []
@@ -21,7 +21,7 @@ class User_Account {
         return token;
     }
 
-    login(email, password){
+    loginUser(email, password){
         const findUser = this.users.find(user => user.email === email.body.email);
 
         if (!findUser) {
@@ -49,4 +49,4 @@ class User_Account {
     }
 }
 
-export default new User_Account;
+export default new UserAccount;
