@@ -63,6 +63,30 @@ describe('/DELETE a specific message', () => {
             done();
         })
     })
+    
 })
 
+describe('Get message By status', () => {
+    it('it should fetch all message with status unread ', (done) => {
+        chai.request(server)
+        .get('/api/v1/messages/status/unread')
 
+        .end((err, res) => {
+            res.should.have.status(200);
+            res.body.should.be.an('object');
+            done();
+        })
+    })
+    it('it should fetch all message with status sent ', (done) => {
+        chai.request(server)
+        .get('/api/v1/messages/status/sent')
+
+        .end((err, res) => {
+            res.should.have.status(200);
+            res.body.should.be.an('object');
+            done();
+        })
+    })
+
+
+})

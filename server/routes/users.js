@@ -5,7 +5,7 @@ const router = express.Router();
 
 // USER ROUTES
 
-router.post('/api/v1/auth/signup', account_controller.userAccount);
+router.post('/api/v1/auth/signup', account_controller.userSignUp);
 router.post('/api/v1/auth/login', account_controller.login);
 
 // MESSAGES ROUTES

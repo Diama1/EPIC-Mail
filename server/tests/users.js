@@ -22,6 +22,24 @@ describe('Create Account', () => {
 			done();
     })
 })
+it ('it should return 400 status when the user leaves an empty and field when the field is required ', (done) => {
+  chai.request(server)
+        .post('/api/v1/auth/signup')
+        .send({
+          email: 'dmahoro1"gmail.com',
+          password: 'hjhjjajha'
+        })
+        .end((err, res) => {
+          res.should.have.status(400);
+          res.body.should.be.an('object');
+          done();
+        });
+
+
+
+})
+
+
 
 
     // first you have to log in to get a token
@@ -37,6 +55,23 @@ describe('Create Account', () => {
           res.body.should.be.an('object');
           done();
         });
+    })
+
+    it ('it should return 400 status when the user leaves an empty and field when the field is required ', (done) => {
+      chai.request(server)
+            .post('/api/v1/auth/login')
+            .send({
+              email: 'dmahoro1"gmail.com',
+              password: 'hjhjjajha'
+            })
+            .end((err, res) => {
+              res.should.have.status(400);
+              res.body.should.be.an('object');
+              done();
+            });
+    
+    
+    
     })
 })
 

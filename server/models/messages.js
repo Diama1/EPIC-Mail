@@ -1,4 +1,4 @@
-import moment, { parseTwoDigitYear } from 'moment';
+import moment from 'moment';
 
 class Message {
 
@@ -21,9 +21,6 @@ class Message {
         return newMessage
     }
     
-
-
-
     getAllMessages() {
         return this.messages;
     }
