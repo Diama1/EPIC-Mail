@@ -10,7 +10,8 @@ class UserAccount {
         const hashPassword = Helper.EncryptPassword(user.body.password);
         const newUser = {
             id:this.users.length + 1,
-            name:user.body.name,
+            firstName:user.body.firstName,
+            lastName:user.body.lastName,
             email:user.body.email,
             password: hashPassword,
             passwordMatch:user.body.passwordMatch

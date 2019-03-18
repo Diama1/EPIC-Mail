@@ -12,9 +12,9 @@ class Message {
             createdOn: moment(new Date()),
             subject: message.body.subject,
             message: message.body.message,
-            SenderID: this.messages.length + 2,
-            receiverID: 1,
-            ParrentMessageId: this.messages.length + 1,
+            SenderID: message.body.SenderID,
+            receiverID: message.body.receiverID,
+            ParrentMessageId: message.body.ParrentMessageId,
             status: message.body.status
         }
         this.messages.push(newMessage);

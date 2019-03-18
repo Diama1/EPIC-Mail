@@ -1,6 +1,8 @@
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import SECRET from '../../env';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const Helper = {
 
@@ -17,7 +19,7 @@ const Helper = {
     const token = jwt.sign({
       userId: id
     },
-      SECRET, { expiresIn: '7d' }
+    process.env.SECRET, { expiresIn: '7d' }
     );
     return token;
   }

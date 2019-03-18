@@ -1,25 +1,9 @@
 import userAccountModel from '../models/user';
-import validation from '../helper/ValidateAuth';
 
 class UserSignUpController {
 
 
     static userSignUp(req,res) {
-        if (!req.body.name || !req.body.email || !req.body.password) {
-            return res.status(400).send({
-                status: 400,
-                Error: 'There is an empty field!'
-            })
-} 
-
-        const { error } = validation.signUpValidation(req.body)
-        if (error){
-            res.status(400).send({
-                status:400,
-                Error:error.details[0].message
-            })
-        }
-        
 
         const userToken = userAccountModel.createUserAccount(req);
         
@@ -34,16 +18,6 @@ class UserSignUpController {
 
     static login(req,res) {
 
-        const { error } = validation.loginValidation(req.body);
-
-        if (error){
-            res.status(400).send({
-                status:400,
-                Error:error.details[0].message
-            });
-            return;
-        }
-        
         const userlogin = userAccountModel.loginUser(req, req);
         
 
