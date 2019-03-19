@@ -142,12 +142,17 @@ input[type="button"],
   input[type="submit"],
 input[type="reset"],
 input[type="button"],
-#item,
+
 
 .button {
   background-color: #08578d;
   box-shadow: inset 0 0 0 1px #08578d;
   color: #fff ; }
+#item {
+  background-color: rgba(255, 255, 255, 0.25);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+  color: #fff ;
+}
   input[type="submit"]:hover,
   input[type="reset"]:hover,
   input[type="button"]:hover,
@@ -161,11 +166,35 @@ input[type="button"],
     input[type="reset"]:hover:active,
     input[type="button"]:hover:active,
     button:hover:active,
-    #item,
+    
     .button:hover:active {
       background-color: transparent;
     color:#08578d;
     }
+    #send{
+      background-color:#1b1b5a; 
+      border: solid 1px #1b1b5a;     
+      color:#fff;
+    }
+    #send:hover{
+      background-color:transparent; 
+      color:#1b1b5a;
+      border: solid 1px #1b1b5a
+    }
+    #cancel {
+      margin-right:100px;
+      background-color:transparent; 
+      color:#1b1b5a;
+      border: solid 1px #1b1b5a
+
+    }
+    #cancel:hover{
+      background-color:#1b1b5a; 
+      border: solid 1px #1b1b5a;     
+      color:#fff;
+    }
+    
+
 
     #show {
       width:143px;
@@ -549,7 +578,7 @@ table {
   
   .modal-header {
     padding: 2px 16px;
-    background-color: #08578d;
+    background-color: #1b1b5a;
     color: white;
   }
   .modal-header h2 {
@@ -634,7 +663,7 @@ table {
   }
   .modal-footer {
     padding: 2px 16px;
-    background-color: #08578d;
+    background-color: #1b1b5a;
     color: white;
     
   }
