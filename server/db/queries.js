@@ -13,6 +13,8 @@ const query = {
       users(firstname, lastname, email, password, created_date, modified_date)
       VALUES($1, $2, $3, $4, $5, $6)
       returning *`,
+      
+      login: 'SELECT * FROM users WHERE email = $1',
 }
 
 export default query;
