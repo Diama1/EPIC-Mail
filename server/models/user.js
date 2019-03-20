@@ -56,37 +56,33 @@ class UserAccount {
 
     async loginUser(user){
         const loginQuery = query.login;
-        
 
-        try {
-            const { rows } = await db.query(loginQuery, [user.email]);
-            if (! rows[0] || Helper.comparePassword(rows[0].password, user.password)){
-                return {
-                    status: false,
-                    message: 'The credentials you provided is incorrect'
-                };
-            }
-            const token = Authentication.generateToken(rows[0].id);
-            return {
-            status: true,
-            row: rows[0],
-            token,
-            
-        };
-        
-        
-    } catch (error) {
+    try {
+      const { rows } = await db.query(loginQuery, [user.email]);
+      if (!rows[0] || !Helper.comparePassword(rows[0].password, user.password)) {
         return {
           status: false,
-          message: error,
+          message: 'The credentials you provided is incorrect',
         };
-        
       }
-      
-
-
-        
+      const token = Helper.generateToken(rows[0].id);
+      return {
+        status: true,
+        row: rows[0],
+        token,
+      };
+    } catch (error) {
+      return {
+        status: false,
+        message: error,
+      };
     }
-}
+  }
+
+    }
+        
+        
+    
+
 
 export default new UserAccount;

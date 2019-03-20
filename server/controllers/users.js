@@ -36,8 +36,8 @@ class UserSignUpController {
                     error: user.message
                 })
             }
-            return res.status(201).send({
-                status:201,
+            return res.status(200).send({
+                status:200,
                 data: [{
                     token: user.token,
                     user: user.row

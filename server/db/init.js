@@ -22,10 +22,51 @@ const createUsersTable = async () => {
         pool.end();
       });
   };
-  (async () => {
-      await createUsersTable();
+  
+
+  const createMessageTable = async () => {
+    const queryText = query.createMessageTable;
+    await pool.query(queryText)
+      .then(async () => {
+      })
+      .catch((err) => {
+        console.log(err);
+        pool.end();
+      });
+  };
+  const createGroupTable = async () => {
+    const queryText = query.createGroup;
+    await pool.query(queryText)
+    .then(async () => {
+
+    })
+    .catch((err) => {
+      console.log(err);
       pool.end();
-      console.log(' users');
+    });
+  };
+
+  const createGrouMember = async () => {
+    const queryText = query.createGrouMember;
+    await pool.query(queryText)
+    .then(async () => {
+
+    })
+    .catch((err) => {
+      console.log(err);
+      pool.end();
+    });
+  };
+  
+  
+  (async () => {
+    
+      await createUsersTable();
+      await createMessageTable();
+      await createGroupTable();
+      await createGrouMember();
+      pool.end();
+     
     })()
     .catch((err) => {
         console.log(err);

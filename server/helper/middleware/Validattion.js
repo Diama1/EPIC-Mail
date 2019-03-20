@@ -1,59 +1,4 @@
 import Joi from 'joi';
-import jwt from 'jsonwebtoken';
-import db from '../../db/runners';
-
-const verifyToken = async (token) => {
-    if (!token) {
-        return {
-            status: false,
-            code: 404,
-            message: 'The token is not Provide'
-        };
-    }
-    try {
-        const decoded = await jwt.verify(token, process.env.SECRET);
-        const ID = 'SELECT * FROM users WHERE id = $1';
-        const { row } = await db.query(ID, [decoded.userId]);
-
-        if (!row[0]) {
-            return {
-                status: false,
-                code: 401,
-                message: 'The User is invalid'
-            };
-        }
-        return {
-            status: true,
-            data: rows[0],
-          };
-
-    }
-    catch (error) {
-        return {
-            status: false,
-            code: 401,
-            message: 'The User is invalid'
-        }
-
-    }  
-}
-
-const authenticate = async (req, res, next) => {
-
-    const token = req.headers['user-token'];
-    const verifiedToken = await verifyToken(token);
-
-    if (!verifiedToken.status) {
-        return res.status(verifiedToken.code).send({
-          status: verifiedToken.code,
-          error: verifiedToken.message,
-        });
-      }
-      req.user = { id: verifiedToken.data.id };
-      return next();
-
-}
-
 
 const validateAuthantication = {
 
@@ -95,9 +40,8 @@ const validateAuthantication = {
         const schema = {
             subject : Joi.string().trim(),
             message : Joi.string().trim().required(),
-            SenderID : Joi.number().required(),
-            receiverID : Joi.number().required(),
-            ParrentMessageId : Joi.number().required(),
+            receiverid : Joi.number().required(),
+            groupid : Joi.number(),
             status : Joi.string().trim().required()
         }
 
@@ -108,7 +52,8 @@ const validateAuthantication = {
                 message: result.error.details[0].message.replace(/[^a-zA-Z ]/g, ''),
             });
     }
-    return authenticate(req, res, next);
+    return next();
+   
 
     }
 
