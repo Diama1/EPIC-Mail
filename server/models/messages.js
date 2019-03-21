@@ -1,85 +1,133 @@
 import moment from 'moment';
+import query from '../db/queries';
+import db from '../db/runners';
+
+
 
 class Message {
 
-    constructor() {
-        this.messages = []
-    }
 
-    CreateMessage(message) {
-        const newMessage = {
-            id: this.messages.length + 1,
-            createdOn: moment(new Date()),
-            subject: message.body.subject,
-            message: message.body.message,
-            SenderID: this.messages.length + 2,
-            receiverID: 1,
-            ParrentMessageId: this.messages.length + 1,
-            status: message.body.status
-        }
-        this.messages.push(newMessage);
-        return newMessage
+    async CreateMessage( message) {
+        
+       
+        let Response = {};
+        const createQuery = query.createMessage;
+        
+        const newMessage = [
+            moment(new Date()),
+            message.body.subject,
+            message.body.message,
+            message.id,
+            message.body.receiverid,
+            message.body.status
+
+        ]
+        
+        try {
+            const { rows } = await db.query(createQuery, newMessage);
+            Response = {
+              status: true,
+              data: rows[0],
+            };
+          } catch (error) {
+            
+            Response = {
+              status: false,
+              code: 503,
+              message: error,
+            };
+          }
+          return Response;
+           
     }
     
-    getAllMessages() {
-        return this.messages;
+    async getAllMessages() {
+        let Response = {}
+        const messageQuery = query.getAllMessages;
+        try {
+            const {rows} = await db.query(messageQuery)
+            Response = {
+                status:true,
+                data: rows
+            } 
+
+        }
+        catch ( error ) {
+            Response = {
+                status:false,
+                message: error
+            } 
+        }
+
+        return Response;
+        
+        
     }
 
     getUnreadMessage(status) {
         return this.messages.filter(msg => msg.status === status)
     }
 
-    getOneMessage(id) {
-        return this.messages.find(msge => msge.id === parseInt(id,10));
+    async getOneMessage(id) {
+        const createQuery = query.getOneMessage;
+            const message = [
+                id,
+            ]
+            try {
+                const { rows } = await db.query(createQuery, message)
+                
+                if (!rows[0]) {
+                    return {
+                        status: false,
+                        message: 'Message Not found!'
+                    }
+                }
+                return {
+                    status: true,
+                    data: rows[0]
+                }
+            } catch ( error ) {
+                return {
+                    status: false,
+                    message: error
+                }
+            }
     }
 
 
-    deleteMessage(id) {
-        const messageIndex = this.messages.findIndex(msg => {
-            return msg.id === parseInt(id,10);
-
-        });
-        if (messageIndex > -1){
-            this.messages.splice(messageIndex,1);
-            return {
-                message: 'The message is successfully deleted!'
-            }
+   async deleteMessage(id) {
+        const deleteQuery = query.deleteOneMessage;
+        const message = [
+            id,
+        ]
+        
+    try {
+      const { rows }  = await db.query(deleteQuery, message);
+      
+      if(!rows[0]) {
+        return {
+            status: false,
+            message: 'Message Not found!'
         }
     }
+    return {
+        status: true,
+        message: 'Message successfully deleted!'
+      };
 
-    getOneMessage(id) {
-        return this.messages.find(msg => msg.id === parseInt(id,10));
+    } catch (error) {
+      return {
+        status: false,
+        message: error,
+      };
     }
+    
 
-    deleteMessage(id) {
-        const messageIndex = this.messages.findIndex(msg => {
-            return msg.id === parseInt(id,10);
+}
 
-        });
-        if (messageIndex > -1){
-            this.messages.splice(messageIndex,1);
-            return {
-                message: 'The message is successfully deleted!'
-            }
-        }
-    }
+    
 
-    getOneMessage(id) {
-        return this.messages.find(msg => msg.id === parseInt(id,10));
-    }
-
-    deleteMessage(id) {
-        const messageIndex = this.messages.findIndex(msg => {
-            return msg.id === parseInt(id,10);
-
-        });
-        if (messageIndex > -1){
-            this.messages.splice(messageIndex,1);
-            return {
-                message: 'The message is successfully deleted!'
-            }
-        }
-    }
+    
 
     
 }
