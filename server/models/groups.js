@@ -88,23 +88,26 @@ class Groups {
     }
     
     }
-    async addGroupMember(user) {
+    async addGroupMember(user,id) {
+        
+        
         const memberQuery= query.memberCreate;
         const member = [
-            user.params.id,
-            user.body.memberId
-            
+            user.body.memberId,
+            id   
         ]
+        
         try {
             const { rows } = await db.query(memberQuery, member);
-            console.log( rows[0])
-            Response = {
+            
+            // console.log( rows[0])
+            return {
               status: true,
               data: rows[0],
             };
           } catch (error) {
             
-            Response = {
+            return {
               status: false,
               code: 503,
               message: error.details[0].message.replace(/[^a-zA-Z ]/g, ''),

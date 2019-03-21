@@ -9,7 +9,7 @@ chai.use(chaiHttp);
 describe('/POST message', () => {
     it('it should create message', (done) => {
         chai.request(server)
-        .post('/api/v1/messages')
+        .post('/api/v2/messages')
         .send({
             subject:"Testing",
 	        message:"Hello world!",
@@ -27,7 +27,7 @@ describe('/POST message', () => {
 describe('/GET all Messages', () => {
     it('it should Fetch all messages', (done) => {
         chai.request(server)
-        .get('/api/v1/messages')
+        .get('/api/v2/messages')
 
         .end((err, res) => {
 			res.should.have.status(200);
@@ -40,7 +40,7 @@ describe('/GET all Messages', () => {
 describe('/GET a specific message', () => {
     it('it should Fetch a specific message', (done) => {
         chai.request(server)
-        .get('/api/v1/messages/:1')
+        .get('/api/v2/messages/:1')
         
 
         .end((err, res) => {
@@ -54,7 +54,7 @@ describe('/GET a specific message', () => {
 describe('/DELETE a specific message', () => {
     it('it should delete a specific message', (done) => {
         chai.request(server)
-        .delete('/api/v1/messages/1')
+        .delete('/api/v2/messages/1')
         
 
         .end((err, res) => {
@@ -69,7 +69,7 @@ describe('/DELETE a specific message', () => {
 describe('Get message By status', () => {
     it('it should fetch all message with status unread ', (done) => {
         chai.request(server)
-        .get('/api/v1/messages/status/unread')
+        .get('/api/v2/messages/status/unread')
 
         .end((err, res) => {
             res.should.have.status(200);

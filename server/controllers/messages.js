@@ -74,7 +74,7 @@ class Messages {
     }
 
     static deleteMessage(req,res) {
-        const messageToDelete = messageModel.deleteMessage(req.params.id);
+        const messageToDelete = messageModel.deleteMessage(req);
         
         messageToDelete.then((result) => {
             if(!result.status) {

@@ -4,7 +4,8 @@ import query from './queries';
 
 dotenv.config();
 
-
+console.log(process.env.DATABASE_URL)
+console.log("fjhfjhfj")
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
   });

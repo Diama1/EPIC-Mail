@@ -54,6 +54,22 @@ class Groups {
         })
     }
 
+    static addMembers(req, res) {
+        const newMember = groupModal.addGroupMember(req.params.id, req)
+        newMember.then((member) => {
+            if(!member.status) {
+                return res.status(404).send({
+                    status: 404,
+                    Error: member.message
+                })
+            }
+            return res.status(200).send({
+                status: 200,
+                Message: member.message
+            })
+        })
+    }
+
 }
 
 export default Groups

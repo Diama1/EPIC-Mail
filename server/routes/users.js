@@ -6,7 +6,7 @@ import Auth from '../helper/user';
 import validations from '../helper/middleware/Validattion';
 const router = express.Router();
 
-router.get('/api/v2', (req, res) => {
+router.get('/', (req, res) => {
     res.send({ message: 'Welcome to EPIC-MAIL APIs' });
   });
 
@@ -28,6 +28,7 @@ router.get('/api/v2/messages/status/:status', Auth.checkToken, messageController
 router.post('/api/v2/group', Auth.checkToken, gorupController.createGroup);
 router.delete('/api/v2/group/:id', Auth.checkToken, gorupController.deleteGroup);
 router.get('/api/v2/group/:id', Auth.checkToken, gorupController.getSpecifiGroup);
+router.post('/api/v2/group/:id/users', Auth.checkToken, gorupController.addMembers)
 
 
 

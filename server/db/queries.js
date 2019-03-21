@@ -51,7 +51,7 @@ const query = {
       
       getOneMessage: `SELECT * from messages where id = $1 `,
 
-      deleteOneMessage: `DELETE  from messages where id = $1 returning *`,
+      deleteOneMessage: `DELETE  from messages where id = $1 and senderId = $2 returning *`,
 
       groupCreate: `INSERT INTO
       messageGroup(groupName, adminId)
@@ -61,7 +61,7 @@ const query = {
       getOneGroup: `SELECT * from messageGroup where id = $1 `,
 
       memberCreate: `INSERT INTO
-      groupMember(groupId, memberId)
+      groupMember( memberId, groupId)
       VALUES($1, $2)
       returning *`,
       

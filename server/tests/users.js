@@ -9,7 +9,7 @@ chai.use(chaiHttp);
 describe('Create Account', () => {
     it('it should create User account', (done) => {
         chai.request(server)
-        .post('/api/v1/auth/signup')
+        .post('/api/v2/auth/signup')
         .send({
             name:"Diane",
             email:"dmahoro1@gmail.com",
@@ -24,7 +24,7 @@ describe('Create Account', () => {
 })
 it ('it should return 400 status when the user leaves an empty and field when the field is required ', (done) => {
   chai.request(server)
-        .post('/api/v1/auth/signup')
+        .post('/api/v2/auth/signup')
         .send({
           email: 'dmahoro1"gmail.com',
           password: 'hjhjjajha'
@@ -45,7 +45,7 @@ it ('it should return 400 status when the user leaves an empty and field when th
     // first you have to log in to get a token
     it('you should Log in to get the token ', (done) => {
       chai.request(server)
-        .post('/api/v1/auth/login')
+        .post('/api/v2/auth/login')
         .send({
           email: 'dmahoro1@gmail.com',
           password: 'hjhadja',
@@ -59,7 +59,7 @@ it ('it should return 400 status when the user leaves an empty and field when th
 
     it ('it should return 400 status when the user leaves an empty and field when the field is required ', (done) => {
       chai.request(server)
-            .post('/api/v1/auth/login')
+            .post('/api/v2/auth/login')
             .send({
               email: 'dmahoro1"gmail.com',
               password: 'hjhjjajha'

@@ -44,6 +44,7 @@ class Message {
     async getAllMessages() {
         let Response = {}
         const messageQuery = query.getAllMessages;
+        
         try {
             const {rows} = await db.query(messageQuery)
             Response = {
@@ -95,11 +96,16 @@ class Message {
     }
 
 
-   async deleteMessage(id) {
+   async deleteMessage(msg) {
+       let userId = msg.id;
+       console.log(userId)
         const deleteQuery = query.deleteOneMessage;
         const message = [
-            id,
+            msg.params.id,
+            userId
+           
         ]
+        
         
     try {
       const { rows }  = await db.query(deleteQuery, message);
