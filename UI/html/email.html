@@ -65,12 +65,12 @@
 
                                                           </textarea><br>
                                                     
-                                                    <input type="submit" value="Send" >
+                                                    <input type="submit" value="Send" id= "send">
                                                     
                             
                                                 </form>
-                                                <Button  class="button" onclick="document.getElementById('myModal').style.display='none'" style="margin-right:100px;color:#08578d;background-color:transparent;border-color:#08578d"> Save </Button>
-                                                <Button  class="button" onclick="document.getElementById('myModal').style.display='none'" style="margin-right:100px;color:#08578d;background-color:transparent;border-color:#08578d"> Cancel</Button>
+                                                <Button  id= "cancel" class="button" onclick="document.getElementById('myModal').style.display='none'" > Save </Button>
+                                                <Button  id= "cancel" class="button" onclick="document.getElementById('myModal').style.display='none'" > Cancel</Button>
                                                 
                                             </div>
                                 </div>
@@ -277,7 +277,6 @@
                 (this).addClass('active');
             });
         });
-
         
         </script>
         <script>
@@ -301,11 +300,9 @@
                 // When the user clicks on <span> (x), close the modal
                 function close() {
                     modal.style.display = "none";
-
                 }
                 
                 
-
                 
                 // When the user clicks anywhere outside of the modal, close it
                 window.onclick = function(event) {
@@ -314,15 +311,12 @@
                   }
                 }
                 
-
                 
                 </script>
                 <script>
                 function group() {
                     document.getElementById('groups').style.display = "block";
                     document.getElementById('to').style.display = "none";
-
-
                 }
                 function showMessage() {
                     document.getElementById('table_inbox').style.display = "none";
@@ -335,9 +329,7 @@
                     document.getElementById('table_draft').style.display = "none";
                     document.getElementById('table_sent').style.display = "none";
                     
-
                 }
-
                 function showSent() {
                     document.getElementById('table_sent').style.display = "none";
                     document.getElementById('msg').style.display = "block";
@@ -349,7 +341,6 @@
                     document.getElementById('draft').style.display = "none";
                     document.getElementById('msg').style.display = "none";
                 }
-
                 function showdraft() {
                     document.getElementById('table_draft').style.display = "none";
                     document.getElementById('draft').style.display = "block";

@@ -142,12 +142,17 @@ input[type="button"],
   input[type="submit"],
 input[type="reset"],
 input[type="button"],
-#item,
+
 
 .button {
   background-color: #08578d;
   box-shadow: inset 0 0 0 1px #08578d;
   color: #fff ; }
+#item {
+  background-color: rgba(255, 255, 255, 0.25);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+  color: #fff ;
+}
   input[type="submit"]:hover,
   input[type="reset"]:hover,
   input[type="button"]:hover,
@@ -161,13 +166,86 @@ input[type="button"],
     input[type="reset"]:hover:active,
     input[type="button"]:hover:active,
     button:hover:active,
-    #item,
+    
     .button:hover:active {
       background-color: transparent;
     color:#08578d;
     }
+    #send{
+      background-color:#1b1b5a; 
+      border: solid 1px #1b1b5a;     
+      color:#fff;
+    }
+    #send:hover{
+      background-color:transparent; 
+      color:#1b1b5a;
+      border: solid 1px #1b1b5a
+    }
+    #cancel {
+      margin-right:100px;
+      background-color:transparent; 
+      color:#1b1b5a;
+      border: solid 1px #1b1b5a
+
+    }
+    #cancel:hover{
+      background-color:#1b1b5a; 
+      border: solid 1px #1b1b5a;     
+      color:#fff;
+    }
+    
 
 
+    #show {
+      width:143px;
+      border-radius:10px;
+      background-color:white;
+      color: #000;
+      float:left
+    }
+    #To_individual
+    {
+      border:none;width:50%;float:left
+    }
+    #groups
+    {
+      display: none;
+    }
+
+    #item 
+    {
+      width:271px;
+      border-radius:10px 0px 0px 10px;
+      color: white;
+      float:left
+    }
+    
+    #save
+    {
+      margin-right:100px;
+      color:#08578d;
+      background-color:transparent;
+      border-color:#08578d
+    }
+    #admin_btn
+    {
+      background:transparent;color:#08578d;margin-top:3em; margin-right: 3em
+    }
+    #user input[type="text"]
+    {
+      margin-bottom:3%;
+      width:30%;
+      float:left;
+      margin-left: 15px;
+      background-color: transparent;
+      border:solid 1px #08578d;
+      color:#08578d;
+      box-shadow: 0 4px 2px -2px gray;
+    }
+    #add 
+    {
+      color:#5cb85c;float:left;
+    }
 	
 	
 	
@@ -500,7 +578,7 @@ table {
   
   .modal-header {
     padding: 2px 16px;
-    background-color: #08578d;
+    background-color: #1b1b5a;
     color: white;
   }
   .modal-header h2 {
@@ -585,7 +663,7 @@ table {
   }
   .modal-footer {
     padding: 2px 16px;
-    background-color: #08578d;
+    background-color: #1b1b5a;
     color: white;
     
   }
@@ -610,7 +688,7 @@ table {
     padding:2%;
     float: right;
   }
-  .nav .welcky
+  .nav .user_email
   {
     float: right;
   }

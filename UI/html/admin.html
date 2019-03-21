@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
         <link rel="stylesheet" href="../css/main.css">
-        <link src="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        
     </head>
     <body>
             <aside class="sidebar-left"> <!-- sidebar-left -->
@@ -29,7 +29,7 @@
             <aside class="sidebar-right"> <!-- sidebar-left -->
                 <div class="container" id="group">
                     <div>
-                        <button id="show" class="button" style="margin-bottom:3%;float:left;margin-left: 15px;background-color: transparent;border:solid 1px #08578d;color:#08578d;box-shadow: 0 4px 2px -2px gray;">Create a Group</button>
+                        <button id="show" class="button" >Create a Group</button>
                         <!-- The Modal -->
                         <div id="myModal" class="modal">
 
@@ -43,7 +43,6 @@
                                         <div class= "form">
                                                 <form action="" method="POST">
                                                     <input type="text" placeholder="Group name" required><br>
-                                                    
                                                     <input type="submit" value="Save" >
                             
                                                 </form>
@@ -73,7 +72,7 @@
                         <tr>
                             <td>Group Name</td>
                             <td>200</td>
-                            <td ><a id="add" style="color:#5cb85c;float:left;">+ Add User </a></td>
+                            <td ><a id="add" >+ Add User </a></td>
 
                             <!-- The Modal -->
                         <div id="addUser" class="modal">
@@ -123,7 +122,7 @@
                                             </div>
                                         </div>
                                         <input type="submit" value="Add Users" >
-                                        <input type="submit" value="Cancel" style="margin-right:100px;color:#08578d;background-color:transparent;border-color:#08578d" >
+                                        <input type="submit" value="Cancel" id="save" >
                                 </div>
                                 
                                 </div>
@@ -139,21 +138,21 @@
                         <tr>
                             <td>Group Name</td>
                             <td>200</td>
-                            <td style="color:#5cb85c;float:left;">+ Add User </a></td>
+                            <td id="add" >+ Add User </a></td>
                             <td><a><img src="../assets/img/garbage.png" width="20px"></a></td>
                             <td style="width:10px"><a><img src="../assets/img/edit.png" width="20px"></a></td>
                         </tr>
                         <tr>
                             <td>Group Name</td>
                             <td>200</td>
-                            <td style="color:#5cb85c">+ Add User </td>
+                            <td id="add" >+ Add User </td>
                             <td><a><img src="../assets/img/garbage.png" width="20px"></a></td>
                             <td style="width:10px"><a><img src="../assets/img/edit.png" width="20px"></a></td>
                         </tr>
                         <tr>
                             <td>Group Name</td>
                             <td>200</td>
-                            <td style="color:#5cb85c">+ Add User </td>
+                            <td id="add" >+ Add User </td>
                             <td><a data-popup-open= "delete1"><img src="../assets/img/garbage.png" width="20px"></a></td>
                             
                             
@@ -165,7 +164,7 @@
 
                 <div class="container" id="user">
                         <div>
-                            <input type="text" placeholder="Search"  style="margin-bottom:3%;width:30%;float:left;margin-left: 15px;background-color: transparent;border:solid 1px #08578d;color:#08578d;box-shadow: 0 4px 2px -2px gray;">
+                            <input type="text" placeholder="Search"   >
                         </div>
                  
                         <table>
